@@ -1,6 +1,6 @@
 title: dash
-author: GitHub User
-email: miguel-gonzalez@gmx.de
+author: Luska
+email: luska@riseup.net
 description: > # this means to ignore newlines until "show_exerpts:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -22,20 +22,23 @@ dash:
 
   # (optional) discqus comment configuration
   disqus:
-    shortname: bitbrain-github-io
+    shortname: luskabol-github-io
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
+    - url: https://twitter.com/luskabol
       icon: twitter-square
       color: cyan
-    - url: https://bitbrain.itch.io
+    - url: https://site.com
       icon: itch-io
       color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/luskabol
       icon: github-square
       color: purple
+    - url: https://linkedin.com/luska
+      icon: linkedin
+      color: blue
 
   # wether the author box should be displayed
   show_author: true
