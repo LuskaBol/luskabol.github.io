@@ -34,7 +34,7 @@ Do you can found the patch of this vulnerability [here][patch-0].
 
 The next 2 security failures that I will explain are very similar, for two main reasons: They two are in the same file and they two are command injection.
 
-A malicious attacker can use the fact that the fax_extension parameter is used later in the function exec without any type of filter or treatment, enabling a malicious attacker to inject commands into the server.
+A malicious attacker can use the fact that the fax_extension parameter is used later in the function exec without any filter or treatment, enabling a malicious attacker to inject commands into the server.
 ```php
 if (strlen($_REQUEST["fax_extension"]) > 0) {
 	$fax_extension = $_REQUEST["fax_extension"];
@@ -58,10 +58,11 @@ correct_path($dir_fax_temp.'/'.$fax_instance_uuid.'.pdf').' '.
 correct_path($dir_fax_temp.'/'.$fax_instance_uuid.'.tif');
 exec($cmd);
 ```
-Do you can found the patch of this vulnerability [here][patch-2].
+Do you can found the patch of this vulnerability [here][patch-2] and the exploit that I've made [here][exploit].
 
 I would like to thank my friends @silvanojr and @carlos_crowsec, who made this research in collaboration with me.
 
 [patch-0]: https://github.com/fusionpbx/fusionpbx/commit/57b7bf0d6b67bda07d550b07d984a44755510d9c
 [patch-1]: https://github.com/fusionpbx/fusionpbx/commit/2d2869c1a1e874c46a8c3c5475614ce769bbbd59
 [patch-2]: https://github.com/fusionpbx/fusionpbx/commit/0377b2152c0e59c8f35297f9a9b6ee335a62d963
+[exploit]: https://www.exploit-db.com/exploits/50505
