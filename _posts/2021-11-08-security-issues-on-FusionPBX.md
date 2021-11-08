@@ -4,7 +4,7 @@ title:  "Security Issues on FusionPBX"
 description: This article explains the research made by me and my friends at FusionPBX.
 tags: CVE
 ---
-In this research, we’ve found that FusionPBX is vulnerable to various security issues, but in this article, I will focus on the 4 vulnerabilities that got assigned as CVE. These vulnerabilities are:
+In this research, I and two friends have found that FusionPBX is vulnerable to various security issues, but in this article, I will focus on the 4 vulnerabilities that got assigned as CVE. These vulnerabilities are:
 
 1. CVE-2021-43403
 2. CVE-2021-43404
