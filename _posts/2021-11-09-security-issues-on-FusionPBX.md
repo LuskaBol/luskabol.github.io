@@ -15,7 +15,7 @@ So let's start from the beginning! The first vulnerability, assigned as CVE-2021
 
 As you can see in this piece of code, it was passing the GET parameter **n**, to the function fopen, which is been passed to the function fpassthru, consequently opening the file passed in the user input.
 
-```php=
+```php
 if (isset($_GET['n']) && substr($_GET['n'],0,14) == "freeswitch.log") {
 	$dir = $_SESSION['switch']['log']['dir'];
 	$filename = $_GET['n'];
@@ -29,13 +29,13 @@ if (isset($_GET['n']) && substr($_GET['n'],0,14) == "freeswitch.log") {
 }
 ```
 But, as can you see in line 1, the first 14 characters need to be **"freeswitch.log"**, we can possibly "bypass" this with another vulnerability to create a folder called **"freeswitch.loganything"**, and using a payload like `"freeswitch.loganything/../../../../../../etc/passwd"` to successfully read the system files.
-Do you can found the patch of this vulnerability here:
-https://github.com/fusionpbx/fusionpbx/commit/57b7bf0d6b67bda07d550b07d984a44755510d9c
+
+Do you can found the patch of this vulnerability [here][patch-0].
 
 The next 2 security failures that I will explain are very similar, for two main reasons: They two are in the same file and they two are command injection.
 
 A malicious attacker can use the fact that the fax_extension parameter is used later in the function exec without any type of treatment, enabling a malicious attacker to inject commands into the server.
-```php=
+```php
 if (strlen($_REQUEST["fax_extension"]) > 0) {
 	$fax_extension = $_REQUEST["fax_extension"];
 }
@@ -44,10 +44,10 @@ $command = $IS_WINDOWS ? '' : 'export HOME=/tmp && ';
 $command .= 'libreoffice --headless --convert-to pdf --outdir '.$dir_fax_temp.' '.$dir_fax_temp.'/'.$fax_name.'.'.$fax_file_extension;
 exec($command);
 ```
-Do you can found the patch of this vulnerability here: https://github.com/fusionpbx/fusionpbx/commit/2d2869c1a1e874c46a8c3c5475614ce769bbbd59
+Do you can found the patch of this vulnerability [here][patch-1].
 
 The last vulnerability is basically the same as the last one, the fax_page_size parameter is used without any type of filter or treatment in the exec function, enabling a malicious attacker to inject commands into the server.
-```php=
+```php
 $fax_page_size = $_POST['fax_page_size'];
 ...
 $cmd = 'tiff2pdf -u i -p '.$fax_page_size.
@@ -58,5 +58,10 @@ correct_path($dir_fax_temp.'/'.$fax_instance_uuid.'.pdf').' '.
 correct_path($dir_fax_temp.'/'.$fax_instance_uuid.'.tif');
 exec($cmd);
 ```
+Do you can found the patch of this vulnerability [here][patch-2].
 
 I would like to thank my friends @silvanojr and @carlos_crowsec, who made this research in collaboration with me.
+
+[patch-0]: https://github.com/fusionpbx/fusionpbx/commit/57b7bf0d6b67bda07d550b07d984a44755510d9c
+[patch-1]: https://github.com/fusionpbx/fusionpbx/commit/2d2869c1a1e874c46a8c3c5475614ce769bbbd59
+[patch-2]: https://github.com/fusionpbx/fusionpbx/commit/0377b2152c0e59c8f35297f9a9b6ee335a62d963
