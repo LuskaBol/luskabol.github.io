@@ -60,9 +60,11 @@ exec($cmd);
 ```
 Do you can found the patch of this vulnerability [here][patch-2] and the exploit that I've made [here][exploit].
 
-I would like to thank my friends @silvanojr and @carlos_crowsec, who made this research in collaboration with me.
+I would like to thank my friends [@silvanojr][silvano] and [@carlos_crowsec][kadu], who made this research in collaboration with me.
 
 [patch-0]: https://github.com/fusionpbx/fusionpbx/commit/57b7bf0d6b67bda07d550b07d984a44755510d9c
 [patch-1]: https://github.com/fusionpbx/fusionpbx/commit/2d2869c1a1e874c46a8c3c5475614ce769bbbd59
 [patch-2]: https://github.com/fusionpbx/fusionpbx/commit/0377b2152c0e59c8f35297f9a9b6ee335a62d963
 [exploit]: https://www.exploit-db.com/exploits/50505
+[silvano]: https://twitter.com/silvanojr
+[kadu]: https://twitter.com/carlos_crowsec
