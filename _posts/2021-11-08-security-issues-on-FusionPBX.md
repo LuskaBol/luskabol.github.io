@@ -30,7 +30,7 @@ if (isset($_GET['n']) && substr($_GET['n'],0,14) == "freeswitch.log") {
 ```
 But, as can you see in line 1, the first 14 characters need to be **"freeswitch.log"**, we can possibly "bypass" this with another vulnerability to create a folder called **"freeswitch.loganything"**, and using a payload like `"freeswitch.loganything/../../../../../../etc/passwd"` to successfully read the system files.
 
-Do you can found the patch of this vulnerability [here][patch-0].
+You can find the patch of this vulnerability [here][patch-0].
 
 The next 2 security failures that I will explain are very similar, for two main reasons: They two are in the same file and they two are command injection.
 
@@ -44,7 +44,7 @@ $command = $IS_WINDOWS ? '' : 'export HOME=/tmp && ';
 $command .= 'libreoffice --headless --convert-to pdf --outdir '.$dir_fax_temp.' '.$dir_fax_temp.'/'.$fax_name.'.'.$fax_file_extension;
 exec($command);
 ```
-Do you can found the patch of this vulnerability [here][patch-1].
+You can find the patch of this vulnerability [here][patch-1].
 
 The last vulnerability is basically the same as the last one, the fax_page_size parameter is used without any filter or treatment in the exec function, making it possible for a malicious attacker to inject commands into the server.
 ```php
@@ -58,7 +58,7 @@ correct_path($dir_fax_temp.'/'.$fax_instance_uuid.'.pdf').' '.
 correct_path($dir_fax_temp.'/'.$fax_instance_uuid.'.tif');
 exec($cmd);
 ```
-Do you can found the patch of this vulnerability [here][patch-2] and the exploit that I've made [here][exploit].
+You can find the patch of this vulnerability [here][patch-2] and the exploit that I've made [here][exploit].
 
 I would like to thank my friends [@silvanojr][silvano] and [@carlos_crowsec][kadu], who made this research in collaboration with me.
 
