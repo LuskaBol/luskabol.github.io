@@ -34,7 +34,7 @@ Do you can found the patch of this vulnerability [here][patch-0].
 
 The next 2 security failures that I will explain are very similar, for two main reasons: They two are in the same file and they two are command injection.
 
-A malicious attacker can use the fact that the fax_extension parameter is used later in the function exec without any type of treatment, enabling a malicious attacker to inject commands into the server.
+A malicious attacker can use the fact that the fax_extension parameter is used later in the function exec without any type of filter or treatment, enabling a malicious attacker to inject commands into the server.
 ```php
 if (strlen($_REQUEST["fax_extension"]) > 0) {
 	$fax_extension = $_REQUEST["fax_extension"];
@@ -46,7 +46,7 @@ exec($command);
 ```
 Do you can found the patch of this vulnerability [here][patch-1].
 
-The last vulnerability is basically the same as the last one, the fax_page_size parameter is used without any type of filter or treatment in the exec function, enabling a malicious attacker to inject commands into the server.
+The last vulnerability is basically the same as the last one, the fax_page_size parameter is used without any filter or treatment in the exec function, making it possible for a malicious attacker to inject commands into the server.
 ```php
 $fax_page_size = $_POST['fax_page_size'];
 ...
