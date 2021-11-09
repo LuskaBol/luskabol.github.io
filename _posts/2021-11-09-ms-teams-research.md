@@ -24,7 +24,7 @@ So, let's talk about what each of these attributes does exactly.
 ## The allow attribute
 Now, if you are not a web developer you are possibly wondering what the allow attribute does. This specifies a resource policy for the iframe, i.e., it specifies which permissions can be passed from the scope of the parent site to the iframe.
 
-As said before we can abuse the allow attribute: `allow="geolocation *; microphone *; camera *; midi *; encrypted-media *"` to gain access to the browser APIs. The problem is that when a site inside the iframe asks for authorization to access these devices, the authorization request comes from 'teams.microsoft.com', not from the iframe's website, usually by using teams calls the user has already given these authorizations, so a site inside the iframe can have access to those APIs without permission.
+As said before we can abuse the allow attribute: `allow="geolocation *; microphone *; camera *; midi *; encrypted-media *"` to gain access to the browser APIs. The problem is that when a site inside the iframe asks for authorization to access these devices, the authorization request comes from 'teams.microsoft.com', not from the iframe's website, usually by using Teams calls the user has already given these authorizations, so a site inside the iframe can have access to those APIs without permission.
 
 
 ## The sandbox attribute
@@ -40,7 +40,7 @@ After a few time researching about URI protocol schemas, we've found [this artic
 
 ### RCE on Linux?
 
-From the cited article, the idea of using xdg-open to call a remote .desktop, thus executing code on the victim's machine seemed like a very interesting one, and that what we did. So, when our victim access the application part with the Iframe, we've successfully Remote Code Execution (in a good part of linux distros).
+From the cited article, the idea of using xdg-open to call a remote .desktop, thus executing code on the victim’s machine seemed like a very interesting one, and that is what we did. So, when our victim access the application part with the Iframe, we’ve successfully Remote Code Execution (in a good part of linux distros).
 
 When we use window.open() pointing to some website with a ‘.desktop’ file, it gets executed, running the command described in the file, for the PoC, we just used the gnome-calculator command, that in a real scenario, could be a malicious Linux command.
 
@@ -71,13 +71,13 @@ StartupNotify=false
 
 For obvious reasons the xdg-open will not work in Windows, so we need a different approach to get RCE in it. Unfortunately, we have tried everything on Windows, but we didn't find anything that can lead to a 0 click RCE on Microsoft Teams running on Windows.
 
-But we can already get Remote Code Execution by exploiting vulnerabilities in third-party applications, like [this vulnerability in steam's protocol][steam], [this vulnerability in WinSCP][winscp] or even the CVE 2021-40444 in Microsoft Word.
+But we can already get Remote Code Execution by exploiting vulnerabilities in third-party applications, like [this vulnerability in steam's protocol][steam], [this vulnerability in WinSCP][winscp], or even the CVE 2021-40444 in Microsoft Word.
 
 And we can also use Click-Once applications with 'microsoft-edge://' protocol to get a 1 click RCE, but I will not go deeper into this.
 
 # Microsoft's response
 
-After about a month that we've contacted Microsoft, they've sent us an email with this message:
+After about a month that we’ve contacted Microsoft, they’ve sent us an email with the following message:
 
 In this case this would be by design functionality. The users are allowed to load external content in that location as a feature. The inability to access the DOM limits the actions of the attacker. We do note, that the window could be clearer in starting that it is external content, and we have forwarded this information over to the product's functional team for review for future versions. For now we are closing this case out as this is currently how this function is intended to work.
 
