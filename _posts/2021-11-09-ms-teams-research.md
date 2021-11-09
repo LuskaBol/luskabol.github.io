@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Microsoft Teams Vulnerabilities and Features!"
-description: Lets talk about Microsoft Teams?.
+description: Lets talk about Microsoft Teams and Iframes!
 tags: Research
 ---
 # Microsoft Teams ~~Vulnerabilities~~ Features! 
