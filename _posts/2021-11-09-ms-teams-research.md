@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Microsoft Teams ?Intended? Vulnerabilities"
+title:  "Microsoft Teams Vulnerabilities and Features!"
 description: Lets talk about Microsoft Teams?.
 tags: Research
 ---
