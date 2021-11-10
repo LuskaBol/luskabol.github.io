@@ -8,7 +8,7 @@ tags: Research
 
 In this article, I will gonna talk about research that me and my friends Bigous, Waid, and Bee made in Microsoft Teams a few time ago. This research, although it did not become a bounty, was a very interesting experience that taught us a lot about researching hardened software.
 
-# Iframe
+## Iframe
 The Iframe, how it works, and the possible vulnerabilities that we can find in this tag is the main part of this entire research. 
 
 While looking for interesting features in the application, we've got the feature of adding websites to add a site for other users to see. So, we decided to take a look into this iframe code:
@@ -27,10 +27,13 @@ Now, if you are not a web developer you are possibly wondering what the allow at
 As said before we can abuse the allow attribute: `allow="geolocation *; microphone *; camera *; midi *; encrypted-media *"` to gain access to the browser APIs. The problem is that when a site inside the iframe asks for authorization to access these devices, the authorization request comes from 'teams.microsoft.com', not from the iframe's website, usually by using Teams calls the user has already given these authorizations, so a site inside the iframe can have access to those APIs without permission.
 
 
+
+
 ## The sandbox attribute
 The sandbox attribute has the value “allow-popups-to-escape-sandbox” set, which means that we can use popups out of the iframe scope, enabling us to escape the sandbox! The popups can be called with the function window.open(), this basically will open another tab in the Teams scope, but this can't only be used to open common URLs, we can use it to open up other applications instead of the system’s default browser eg: calculator://, mailto://, ms-word://... We can also try to manipulate the DOM and try to do some tricks like seen [here][ms-teams-rce], but we are "blocked" from accessing the DOM, limiting a lot the attack surface. 
 
-![](https://i.imgur.com/0mQElWs.png)
+![](https://i.imgur.com/awKK3r3.png)
+
 
 ### URI schemas
 
