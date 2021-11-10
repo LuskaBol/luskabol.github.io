@@ -13,7 +13,7 @@ In this research, I and two friends have found that FusionPBX is vulnerable to v
 
 So let's start from the beginning! The first vulnerability, assigned as CVE-2021-43403 is a path traversal found in the file **"app/log_viewer/log_viewer.php"**.
 
-As you can see in this piece of code, it was passing the GET parameter **n**, to the function fopen, which is been passed to the function fpassthru, consequently opening the file passed in the user input.
+As you can see in this piece of code, it was passing the GET parameter **n**, to the function **fopen**, which is been passed to the function **fpassthru**, consequently opening the file passed in the user input.
 
 ```php
 if (isset($_GET['n']) && substr($_GET['n'],0,14) == "freeswitch.log") {
