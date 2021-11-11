@@ -32,7 +32,7 @@ As said before we can abuse the allow attribute: `allow="geolocation *; micropho
 
 ## The sandbox attribute
 
-The sandbox attribute has the value “allow-popups-to-escape-sandbox” set, which means that we can use popups out of the iframe scope, enabling us to escape the sandbox! The popups can be called with the function window.open(), this basically will open another tab in the Teams scope, but this can't only be used to open common URLs, we can use it to open up other applications instead of the system’s default browser eg: calculator://, mailto://, ms-word://... We can also try to manipulate the DOM and try to do some tricks like seen [here][ms-teams-rce], but we are "blocked" from accessing the DOM, limiting a lot the attack surface. 
+The sandbox attribute has the value “allow-popups-to-escape-sandbox” set, which means that we can use popups out of the iframe scope, enabling us to escape the sandbox! The popups can be called with the function window.open(), this basically will open another tab in the Teams scope, but this can't only be used to open common URLs, we can use it to open up other applications instead of the system’s default browser eg: calculator://, mailto://, ms-word://... This could be very interesting since the desktop application uses electron. We can also try to manipulate the DOM and try to do some tricks like seen [here][ms-teams-rce], but we are "blocked" from accessing the DOM, limiting a lot the attack surface. 
 
 ### URI schemas
 
