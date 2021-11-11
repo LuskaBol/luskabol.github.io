@@ -42,7 +42,7 @@ After a few time researching about URI protocol schemas, we've found [this artic
 
 ### RCE on Linux?
 
-From the cited article, the idea of using xdg-open to call a remote .desktop, thus executing code on the victim’s machine seemed like a very interesting one, and that is what we did. So, when our victim access the application part with the Iframe, we’ve successfully Remote Code Execution (in a good part of linux distros).
+From the cited article, the idea of using xdg-open to call a remote .desktop, thus executing code on the victim’s machine seemed like a very interesting one, and that is what we did. So, when our victim access the application part with the Iframe, we’ve successfully achieved Remote Code Execution (in a good part of linux distros).
 
 When we use window.open() pointing to some website with a ‘.desktop’ file, it gets executed, running the command described in the file, for the PoC, we just used the gnome-calculator command, that in a real scenario, could be a malicious Linux command.
 
