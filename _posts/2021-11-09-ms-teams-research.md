@@ -101,4 +101,4 @@ Although Microsoft says it doesn't see this as a security issue, it was a very f
 [winscp]: https://nvd.nist.gov/vuln/detail/CVE-2021-3331
 [Bee]: https://twitter.com/beescoitu
 [Bigous]: https://github.com/viniciuspereiras
-[Waid]: https://www.linkedin.com/in/ACoAACILYjIBue2VopRJbGxwsX2BzlJnboWApzk?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BavCQnqHaQUCkEBYl69SotQ%3D%3D
+[Waid]: https://www.linkedin.com/in/rafaellresende/
