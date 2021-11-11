@@ -99,6 +99,6 @@ Although Microsoft says it doesn't see this as a security issue, it was a very f
 [positive-security]: https://positive.security/blog/url-open-rce
 [steam]: http://revuln.com/files/ReVuln_Steam_Browser_Protocol_Insecurity.pdf
 [winscp]: https://nvd.nist.gov/vuln/detail/CVE-2021-3331
-[Bee]: https://twitter.com/beescoitu
-[Bigous]: https://github.com/viniciuspereiras
+[Bee]: https://github.com/beescuit
+[Bigous]: https://www.linkedin.com/in/viniciuspereiras/
 [Waid]: https://www.linkedin.com/in/rafaellresende/
