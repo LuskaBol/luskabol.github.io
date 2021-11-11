@@ -6,7 +6,7 @@ tags: Research
 ---
 # Microsoft Teams ~~Vulnerabilities~~ Features! 
 
-In this article, I will gonna talk about research that me and my friends Bigous, Waid, and Bee made in Microsoft Teams a few time ago. This research, although it did not become a bounty, was a very interesting experience that taught us a lot about researching hardened software.
+In this article, I will gonna talk about research that me and my friends [Bigous], [Waid], and [Bee] made in Microsoft Teams a few time ago. This research, although it did not become a bounty, was a very interesting experience that taught us a lot about researching hardened software.
 
 ## Iframe
 The Iframe, how it works, and the possible vulnerabilities that we can find in this tag is the main part of this entire research. 
@@ -99,3 +99,6 @@ Although Microsoft says it doesn't see this as a security issue, it was a very f
 [positive-security]: https://positive.security/blog/url-open-rce
 [steam]: http://revuln.com/files/ReVuln_Steam_Browser_Protocol_Insecurity.pdf
 [winscp]: https://nvd.nist.gov/vuln/detail/CVE-2021-3331
+[Bee]: https://twitter.com/beescoitu
+[Bigous]: https://github.com/viniciuspereiras
+[Waid]: https://www.linkedin.com/in/ACoAACILYjIBue2VopRJbGxwsX2BzlJnboWApzk?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BavCQnqHaQUCkEBYl69SotQ%3D%3D
