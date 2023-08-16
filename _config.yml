@@ -1,10 +1,9 @@
 title: luska
 author: Lucas Botelho
-email: luska@riseup.net
+email: luska@duck.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  I'm 18 years old security analyst and student from Brazil. I like to 
-  play CTFs and also do some bug bounty and security research. I'm currently
-  focused on Web and Mobile security. 
+  I'm a security enthusiastic from Brazil. I like to 
+  play CTFs and also do some bug bounty and security research. 
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 1
